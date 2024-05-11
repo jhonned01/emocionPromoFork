@@ -33,8 +33,8 @@ export default function ModalContact({ setStateModal, StateModal }) {
           <form
             action={async (formData) => {
               const response = await SendMail(formData);
-              console.log(response);
               alert(response?.message || "");
+              setStateModal(false);
             }}
           >
             <div className="pb-4 grid grid-cols-1 md:grid-cols-2 gap-x-4">

@@ -25,7 +25,7 @@ export async function SendMail(formData) {
 
     const mensaje = {
       from: "notificacion@brandingemocion.com",
-      to: "fanaticos@emocion.pe,jhonned01@gmail.com",
+      to: "fanaticos@emocion.pe",
       subject: `🎉🥳 ¡Solicitud de contacto: ${NombreEmpresa || ""}! 🥳🎉`,
       html: `
           <div style="max-width: 600px; margin: 20px auto; background-color: #ffffff; border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
