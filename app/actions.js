@@ -9,8 +9,7 @@ export async function SendMail(formData) {
       CelularCountry,
       Celular,
       Correo,
-      DNI,
-      DominioSugerido,
+      Mensaje,
     } = Object.fromEntries(formData);
 
     const transporter = nodemailer.createTransport({
@@ -25,7 +24,7 @@ export async function SendMail(formData) {
 
     const mensaje = {
       from: "notificacion@brandingemocion.com",
-      to: "fanaticos@emocion.pe",
+      to: "fanaticos@emocion.pe,psolar@emocion.pe,dweb@brandingemocion.com",
       subject: `🎉🥳 ¡Solicitud de contacto: ${NombreEmpresa || ""}! 🥳🎉`,
       html: `
           <div style="max-width: 600px; margin: 20px auto; background-color: #ffffff; border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
@@ -45,13 +44,13 @@ export async function SendMail(formData) {
               <li style="margin-bottom: 10px;"><strong>Celular:</strong> ${
                 CelularCountry || ""
               } ${Celular || 0}</li>
-              <li style="margin-bottom: 10px;"><strong>Dominio Sugerido:</strong> ${DominioSugerido}</li>
-               <li style="margin-bottom: 10px;"><strong>Correo electrónico:</strong> <a href="mailto:${Correo}" style="color: #101c71; text-decoration: none;">${
+                <li style="margin-bottom: 10px;"><strong>Correo electrónico:</strong> <a href="mailto:${Correo}" style="color: #101c71; text-decoration: none;">${
         Correo || ""
       }</a></li>
-                 <li style="margin-bottom: 10px;"><strong>DNI:</strong> ${
-                   DNI || ""
-                 }</li>
+      <li style="margin-bottom: 10px;"><strong>Mensaje:</strong> ${
+        Mensaje || ""
+      }</li>
+              
               </ul>
               <p style="margin-bottom: 0;">Por favor, ponte en contacto con el usuario lo antes posible para atender su solicitud.</p>
               <p style="margin-bottom: 0;">¡Gracias!</p>
