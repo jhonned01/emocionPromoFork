@@ -2,6 +2,7 @@
 import Image from "next/image";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import Link from "next/link";
 export default function Home() {
   const Proyectos = [
     {
@@ -42,16 +43,18 @@ export default function Home() {
                 }}
               />
             </figure>
-            <Image
-              className="pt-4 lg:ml-10 mx-auto lg:mx-0 "
-              width={350}
-              height={120}
-              src={"/Recursos/Button.png"}
-              alt="Titulo"
-              style={{
-                objectFit: "cover",
-              }}
-            />
+            <Link href={"/consultapromojulio2024"}>
+              <Image
+                className="pt-4 lg:ml-10 mx-auto lg:mx-0 "
+                width={350}
+                height={120}
+                src={"/Recursos/Button.png"}
+                alt="Titulo"
+                style={{
+                  objectFit: "cover",
+                }}
+              />
+            </Link>
           </div>
           <Carousel
             infiniteLoop
