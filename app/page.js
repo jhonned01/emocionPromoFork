@@ -30,9 +30,9 @@ export default function Home() {
         </header>
       </section>
       <div className="bg-[#ffffff] container mx-auto  overflow-hidden p-5 ">
-        <div className="grid lg:grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 justify-center items-center">
           <div className="w-full h-full">
-            <figure className="relative w-[40rem] h-[24rem]  ">
+            <figure className="relative w-[17rem] h-[10rem] sm:w-full sm:h-[18rem] lg:w-[40rem] lg:h-[24rem]  ">
               <Image
                 fill
                 src={"/Recursos/Titulo.png"}
@@ -43,7 +43,7 @@ export default function Home() {
               />
             </figure>
             <Image
-              className="pt-4 ml-10"
+              className="pt-4 lg:ml-10 mx-auto lg:mx-0 "
               width={350}
               height={120}
               src={"/Recursos/Button.png"}
@@ -60,7 +60,7 @@ export default function Home() {
             showStatus={false}
             showIndicators={false}
             showArrows={false}
-            className="-ml-[252px]"
+            className="lg:-ml-[245px]"
           >
             <div className=" ">
               <img
@@ -69,13 +69,13 @@ export default function Home() {
                 style={{
                   objectFit: "contain",
                 }}
-                className="w-full h-[500px]   "
+                className="w-full h-[250px] lg:h-[500px]   "
               />
             </div>
 
             <div>
               <img
-                className="w-full h-[500px]   "
+                className="w-full h-[250px] lg:h-[500px]   "
                 src={"/Recursos/Mujer2.png"}
                 alt="Hombre1.png"
                 style={{
