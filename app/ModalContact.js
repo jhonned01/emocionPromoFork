@@ -18,7 +18,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { sendGAEvent } from "@next/third-parties/google";
 import { useRouter } from "next/navigation";
 
-export default function ModalContact({ setStateModal, StateModal }) {
+export default function ModalContact({
+  setStateModal,
+  StateModal,
+  Proyecto,
+  URL,
+}) {
   const router = useRouter();
 
   return (
@@ -37,8 +42,9 @@ export default function ModalContact({ setStateModal, StateModal }) {
             // <event_parameters>
           },
         });
-        const response = await SendMail(formData);
-        router.push("/?Send=true");
+        const response = await SendMail(formData, Proyecto, URL);
+
+        await router.push("/?Send=true");
       }}
     >
       <div className=" grid grid-cols-1   md:grid-cols-2 gap-x-4">

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import ModalContact from "../ModalContact";
 
-export default function Home() {
+export default function Home({ searchParams }) {
   return (
     <main className=" bg-gradient-to-br from-[#0d1a2e] to-[#1b4681] flex items-center min-h-screen w-full overflow-auto">
       <div className="container  max-w-3xl  bg-white rounded-2xl    ">
@@ -18,7 +18,10 @@ export default function Home() {
             }}
           />
           <div className="">
-            <ModalContact />
+            <ModalContact
+              Proyecto={searchParams?.NombreProyecto || ""}
+              URL={searchParams?.Url}
+            />
           </div>
         </div>
 
