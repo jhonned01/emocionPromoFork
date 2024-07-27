@@ -92,17 +92,14 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="grid place-items-center mx-auto p-20 sm:my-auto bg-gray-50 rounded-3xl space-y-10">
-        <h1 className="text-5xl font-semibold text-blue-500">
-          Redes Sociales{" "}
-        </h1>
+      <div className="grid place-items-center mx-auto p-20 sm:my-auto bg-[#3f85f5] rounded-3xl space-y-10">
         <div className="flex items-center justify-center space-x-3">
           <a
             href="https://www.facebook.com/BE.Branding.Publicidad"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button className="bg-blue-500 px-4 py-2 font-semibold text-white inline-flex items-center space-x-2 rounded">
+            <button className="bg-blue-700 px-4 py-2 font-semibold text-white inline-flex items-center space-x-2 rounded">
               <svg
                 className="w-5 h-5 fill-current"
                 role="img"
