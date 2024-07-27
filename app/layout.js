@@ -16,7 +16,6 @@ export default function RootLayout({ children }) {
     <html lang="es">
       <body className={inter.className}>{children}</body>
       <GoogleAnalytics gaId="AW-16654758628" />
-
       <Script id="facebook-pixel" strategy="afterInteractive">
         {`
           !function(f,b,e,v,n,t,s)
