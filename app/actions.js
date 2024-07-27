@@ -1,7 +1,7 @@
 "use server";
 import nodemailer from "nodemailer";
 
-export async function SendMail(formData) {
+export async function SendMail(formData, Proyecto, URL) {
   try {
     const {
       NombreCompleto,
@@ -41,6 +41,9 @@ export async function SendMail(formData) {
               <li style="margin-bottom: 10px;"><strong>Nombre Empresa:</strong> ${
                 NombreEmpresa || ""
               }</li>
+               <li style="margin-bottom: 10px;"><strong>Landing:</strong> ${
+                 Proyecto || ""
+               } ${URL || ""}</li>
               <li style="margin-bottom: 10px;"><strong>Celular:</strong> ${
                 CelularCountry || ""
               } ${Celular || 0}</li>

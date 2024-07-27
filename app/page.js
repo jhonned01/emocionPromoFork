@@ -9,13 +9,14 @@ export default function Home({ searchParams }) {
   console.log(searchParams);
   const Proyectos = [
     {
-      Image: "",
+      Name: "Landing 2",
+      Image: "/Template2.png",
+      url: "https://emocion.pe/Landing2/",
     },
     {
-      Image: "",
-    },
-    {
-      Image: "",
+      Name: "Landing 4",
+      Image: "/Template4.png",
+      url: "https://emocion.pe/Landing4/",
     },
   ];
   return (
@@ -94,8 +95,51 @@ export default function Home({ searchParams }) {
           </Carousel>
         </div>
       </div>
+      <div className="container mx-auto space-y-4 py-5 text-center">
+        <h1 className="text-3xl font-extrabold  text-gray-800 ">
+          Elige tu Página
+        </h1>
 
-      <div className="grid place-items-center mx-auto p-20 sm:my-auto bg-[#3f85f5] rounded-3xl space-y-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center items-center mx-auto">
+          {Proyectos.map((proyecto, key) => (
+            <div
+              key={key}
+              className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105"
+            >
+              <div className="p-1 bg-blue-200"></div>
+              <div className="p-8">
+                <h2 className="text-3xl font-bold text-gray-800 mb-4">
+                  {proyecto?.Name}
+                </h2>
+                <img src={proyecto?.Image} alt="" />
+              </div>
+              <div className="px-5 pb-5 flex  gap-x-3">
+                <a
+                  href={proyecto.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full"
+                >
+                  <button className="w-full bg-blue-500 text-white rounded-full px-4 py-2 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800">
+                    Visualizar{" "}
+                  </button>
+                </a>
+                <a
+                  className="w-full"
+                  href={`/consultapromojulio2024?NombreProyecto=${proyecto.Name}&Url=${proyecto?.url}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="w-full bg-blue-500 text-white rounded-full px-4 py-2 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800">
+                    Pedir ahora
+                  </button>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className=" grid place-items-center mx-auto p-20 sm:my-auto bg-[#3f85f5] rounded-3xl space-y-10">
         <div className="flex items-center justify-center space-x-3">
           <a
             href="https://www.facebook.com/BE.Branding.Publicidad"
