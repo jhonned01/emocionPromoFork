@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -14,11 +15,20 @@ import PhoneInput from "react-phone-number-input";
 import { SendMail } from "./actions";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { sendGAEvent } from "@next/third-parties/google";
 
 export default function ModalContact({ setStateModal, StateModal }) {
   return (
     <form
       action={async (formData) => {
+        sendGAEvent({
+          event: "ads_conversion_Enviar_formulario_de_cl_1",
+          value: {
+            event_callback: callback,
+            event_timeout: 2000,
+            // <event_parameters>
+          },
+        });
         const response = await SendMail(formData);
         alert(response?.message || "");
       }}
