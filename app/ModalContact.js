@@ -21,6 +21,11 @@ export default function ModalContact({ setStateModal, StateModal }) {
   return (
     <form
       action={async (formData) => {
+        let callback = function () {
+          if (typeof url === "string") {
+            window.location = url;
+          }
+        };
         sendGAEvent({
           event: "ads_conversion_Enviar_formulario_de_cl_1",
           value: {
