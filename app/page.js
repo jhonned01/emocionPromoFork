@@ -5,8 +5,8 @@ import { Carousel } from "react-responsive-carousel";
 import Link from "next/link";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 import ModalMsn from "./ModalMsn";
+import Facebook from "./Facebook";
 export default function Home({ searchParams }) {
-  console.log(searchParams);
   const Proyectos = [
     {
       Name: "Landing 2",
@@ -21,6 +21,7 @@ export default function Home({ searchParams }) {
   ];
   return (
     <main className="w-screen h-screen overflow-auto">
+      <Facebook />
       {searchParams?.Send && <ModalMsn />}
       <section className="  bg-[#3f85f5]">
         <header className="container mx-auto max-w-7xl p-5">
