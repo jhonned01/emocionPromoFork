@@ -5,6 +5,7 @@ import { Carousel } from "react-responsive-carousel";
 import Link from "next/link";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 import ModalMsn from "./ModalMsn";
+
 export default function Home({ searchParams }) {
   const Proyectos = [
     {
