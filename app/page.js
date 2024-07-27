@@ -4,7 +4,9 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import Link from "next/link";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
-export default function Home() {
+import ModalMsn from "./ModalMsn";
+export default function Home({ searchParams }) {
+  console.log(searchParams);
   const Proyectos = [
     {
       Image: "",
@@ -18,6 +20,7 @@ export default function Home() {
   ];
   return (
     <main className="w-screen h-screen overflow-auto">
+      {searchParams?.Send && <ModalMsn />}
       <section className="  bg-[#3f85f5]">
         <header className="container mx-auto max-w-7xl p-5">
           <Image

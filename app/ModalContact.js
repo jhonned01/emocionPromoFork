@@ -16,8 +16,11 @@ import { SendMail } from "./actions";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { sendGAEvent } from "@next/third-parties/google";
+import { useRouter } from "next/navigation";
 
 export default function ModalContact({ setStateModal, StateModal }) {
+  const router = useRouter();
+
   return (
     <form
       action={async (formData) => {
@@ -35,7 +38,7 @@ export default function ModalContact({ setStateModal, StateModal }) {
           },
         });
         const response = await SendMail(formData);
-        alert(response?.message || "");
+        router.push("/?Send=true");
       }}
     >
       <div className=" grid grid-cols-1   md:grid-cols-2 gap-x-4">
